@@ -1,0 +1,19 @@
+[user]
+	name = Eduardo Almeida
+	email = xxxxxx@mail.com.br
+[alias]
+	lg2 = log --color --graph --pretty=format:'i%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+	lg = log --graph --decorate --all --date-order --date=format:'%d/%m/%y %H:%M' --pretty=format:'%C(cyan)%h%Creset %C(black bold)%ad%Creset%C(auto)%d %s' 
+[core]
+	editor = vim
+
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
